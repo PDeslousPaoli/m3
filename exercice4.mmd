@@ -1,0 +1,21 @@
+interface Behavior {
+  act(creature: AdaptiveCreature): void;
+}
+
+class ActiveBehavior implements Behavior {
+  act(creature: AdaptiveCreature) {
+    console.log(`${creature.name} est actif !`);
+  }
+}
+
+class SleepingBehavior implements Behavior {
+  act(creature: AdaptiveCreature) {
+    console.log(`${creature.name} dort 💤`);
+  }
+}
+
+class HidingBehavior implements Behavior {
+  act(creature: AdaptiveCreature) {
+    console.log(`${creature.name} se cache 😨`);
+  }
+}

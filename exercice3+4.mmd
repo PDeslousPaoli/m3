@@ -1,0 +1,73 @@
+classDiagram
+    class Swimmer {
+        <<interface>>
+        + swim(): void
+    }
+
+    class Flyer {
+        <<interface>>
+        + fly(): void
+    }
+
+    class Predator {
+        <<interface>>
+        + hunt(prey: Animal): void
+    }
+
+    class Duck {
+        + swim(): void
+        + fly(): void
+    }
+
+    class Pike {
+        + swim(): void
+        + hunt(prey: Animal): void
+    }
+
+    Swimmer <|.. Duck
+    Flyer <|.. Duck
+
+    Swimmer <|.. Pike
+    Predator <|.. Pike
+
+    class Weather {
+        + observers: WeatherObserver[]
+        + state: string
+        + notify(): void
+        + setWeather(w: string): void
+        + addObserver(o: WeatherObserver): void
+    }
+
+    class WeatherObserver {
+        <<interface>>
+        + onWeatherChange(weather: string)
+    }
+
+    class Behavior {
+        <<interface>>
+        + act()
+    }
+
+    class ActiveBehavior {
+        + act()
+    }
+    class SleepingBehavior {
+        + act()
+    }
+    class HidingBehavior {
+        + act()
+    }
+
+    class AdaptiveCreature {
+        + name: string
+        - behavior: Behavior
+        + setBehavior(b: Behavior): void
+        + onWeatherChange(weather: string): void
+        + performAction(): void
+    }
+
+    WeatherObserver <|.. AdaptiveCreature
+
+    Behavior <|.. ActiveBehavior
+    Behavior <|.. SleepingBehavior
+    Behavior <|.. HidingBehavior

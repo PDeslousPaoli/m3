@@ -1,0 +1,34 @@
+classDiagram
+    class Animal {
+        <<abstract>>
+        + name: string
+        + makeSound(): void
+    }
+
+    class Frog {
+        + makeSound(): void
+    }
+
+    class Fish {
+        + makeSound(): void
+    }
+
+    class Dragonfly {
+        + makeSound(): void
+    }
+
+    class Mosquito {
+        + makeSound(): void
+        + bite(): void
+    }
+
+    class Snail {
+        + makeSound(): void
+        + slowMove(): void
+    }
+
+    Animal <|-- Frog
+    Animal <|-- Fish
+    Animal <|-- Dragonfly
+    Animal <|-- Mosquito
+    Animal <|-- Snail
