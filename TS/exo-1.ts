@@ -39,6 +39,8 @@ type Crypto = {
   network: string;
 }
 
+type UserRole = "admin" | "user" | "staff" | "manager";
+
 type User = {
   id: number;
   firstName: string;
@@ -67,18 +69,29 @@ type User = {
   ssn: string;
   userAgent: string;
   crypto: Crypto;
-  role: string;
+  role: UserRole;
 }
 
-const API_URL = "https://dummyjson.com/users";
+export type FetchUserParams = {
+  limit?: number;
+  sort?: "asc" | "desc";
+  role?: UserRole;
+};
 
-export async function fetchUser(): Promise<User> {
-  const response = await fetch(API_URL);
+export async function fetchUser(params: FetchUserParams = {}): Promise<User[]> {
+  const query = new URLSearchParams();
 
+  if (params.limit) query.set("limit", params.limit.toString());
+  if (params.sort) query.set("sort", params.sort);
+  if (params.role) query.set("role", params.role);
+
+  const url = `https://dummyjson.com/users?${query.toString()}`;
+
+  const response = await fetch(url);
   if (!response.ok) {
-    throw new Error(`Failed to fetch user: ${response.status}`);
+    throw new Error(`Failed to fetch users: ${response.status}`);
   }
 
-  const data: User = await response.json();
-  return data;
+  const data = await response.json();
+  return data.users as User[];
 }
