@@ -15,3 +15,5 @@ class MetricsObserver implements Observer {
     }
   }
 }
+
+//setup a subject for the observer 
