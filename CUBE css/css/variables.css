@@ -1,0 +1,24 @@
+:root {
+  --color-primary: #222222;
+  --bg: #4f8cff;
+
+  --text-sm: 0.875rem;
+  --text-base: 1rem;
+  --text-lg: 1.25rem;
+  --text-xl: 1.5rem;
+  --text-xxl: 2rem;
+  --text-3xl: 2.625rem;
+
+  --spacing-sm: 0.5rem;
+  --spacing-base: 1rem;
+  --spacing-lg: 2rem;
+  --spacing-xl: 4rem;
+  --spacing-xxl: 6rem;
+
+  --radius-sm: 0.25rem;
+  --radius-base: 0.5rem;
+  --radius-md: 0.75rem;
+
+  --hover-scale: 1.05;
+  --transition-speed: 150ms;
+}

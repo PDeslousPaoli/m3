@@ -1,0 +1,15 @@
+.flow > * + * {
+  margin-top: var(--space, .75rem);
+}
+
+.stack {
+  display: flex;
+  flex-direction: column;
+  gap: var(--space-base)w
+}
+
+.grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+  gap: var(--spacing-base);
+}

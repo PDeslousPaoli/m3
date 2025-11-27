@@ -1,0 +1,20 @@
+body {
+  padding: var(--space-base);
+  color: var(--color-primary);
+}
+
+a {
+  color: var(--color-primary);
+  text-decoration: none;
+}
+
+h1, h2, h3 {
+  font-weight: 500;
+  line-height: 1.1;
+}
+
+p {
+  font-size: var(--text-lg);
+  max-width: 65ch;
+  line-height: 1.6;
+}
