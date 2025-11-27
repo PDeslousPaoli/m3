@@ -1,0 +1,44 @@
+.center {
+  display: grid;
+  place-items: center;
+}
+
+.flow > * + * {
+  margin-top: var(--space, .75rem);
+}
+
+.u-muted {
+  opacity: .7 !important;
+}
+
+.u-click {
+  cursor: pointer !important;
+}
+
+.counter {
+  --size: 80px;
+  --bg: #4f8cff;
+  --hover-scale: 1.05;
+  --transition-speed: 150ms;
+
+  width: var(--size);
+  height: var(--size);
+  background: var(--bg);
+  border-radius: 50%;
+  color: white;
+  font-size: 1.7rem;
+  font-weight: 700;
+
+  transition:
+    transform var(--transition-speed) ease,
+    box-shadow var(--transition-speed) ease;
+}
+
+.counter:hover {
+  transform: scale(var(--hover-scale));
+  box-shadow: 0px 4px 10px rgba(0,0,0,0.15);
+}
+
+.counter--alert {
+  --bg: #deb544;
+}
