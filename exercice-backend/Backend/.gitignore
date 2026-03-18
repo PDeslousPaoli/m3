@@ -1,0 +1,6 @@
+dist
+node_modules/
+Backend/scraping/
+.env.test
+.env.development
+testconnection.ts
